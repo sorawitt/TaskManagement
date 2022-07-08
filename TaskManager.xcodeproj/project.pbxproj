@@ -13,6 +13,8 @@
 		22F69D0028785D45008B6445 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F69CFF28785D45008B6445 /* Preview Assets.xcassets */; };
 		22F69D0228785D45008B6445 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F69D0128785D45008B6445 /* Persistence.swift */; };
 		22F69D0528785D45008B6445 /* TaskManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22F69D0328785D45008B6445 /* TaskManager.xcdatamodeld */; };
+		22F69D0E28785E76008B6445 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F69D0D28785E76008B6445 /* HomeView.swift */; };
+		22F69D1028786613008B6445 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F69D0F28786613008B6445 /* TaskViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		22F69CFF28785D45008B6445 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		22F69D0128785D45008B6445 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		22F69D0428785D45008B6445 /* TaskManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskManager.xcdatamodel; sourceTree = "<group>"; };
+		22F69D0D28785E76008B6445 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		22F69D0F28786613008B6445 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 			children = (
 				22F69CF828785D42008B6445 /* TaskManagerApp.swift */,
 				22F69CFA28785D42008B6445 /* ContentView.swift */,
+				22F69D0C28785E23008B6445 /* ViewModel */,
+				22F69D0B28785E0E008B6445 /* View */,
 				22F69CFC28785D45008B6445 /* Assets.xcassets */,
 				22F69D0128785D45008B6445 /* Persistence.swift */,
 				22F69D0328785D45008B6445 /* TaskManager.xcdatamodeld */,
@@ -71,6 +77,22 @@
 				22F69CFF28785D45008B6445 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		22F69D0B28785E0E008B6445 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22F69D0D28785E76008B6445 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22F69D0C28785E23008B6445 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				22F69D0F28786613008B6445 /* TaskViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,8 +166,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				22F69D0228785D45008B6445 /* Persistence.swift in Sources */,
+				22F69D1028786613008B6445 /* TaskViewModel.swift in Sources */,
 				22F69CFB28785D42008B6445 /* ContentView.swift in Sources */,
 				22F69D0528785D45008B6445 /* TaskManager.xcdatamodeld in Sources */,
+				22F69D0E28785E76008B6445 /* HomeView.swift in Sources */,
 				22F69CF928785D42008B6445 /* TaskManagerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
