@@ -11,7 +11,7 @@ struct AddNewTaskView: View {
     @EnvironmentObject var taskModel: TaskViewModel
     
     // MARK: All Environment Values in one Variable
-    @Environment(\.self) var context
+    @Environment(\.self) var env
     
     // MARK: Matched Geometry Namespace
     @Namespace var animation
@@ -22,7 +22,7 @@ struct AddNewTaskView: View {
                 .frame(maxWidth: .infinity)
                 .overlay(alignment: .leading) {
                     Button {
-                        context.dismiss()
+                        env.dismiss()
                     } label: {
                         Image(systemName: "arrow.left")
                             .font(.title3)
@@ -138,8 +138,8 @@ struct AddNewTaskView: View {
             
             // MARK: Save Button
             Button {
-                if taskModel.addTask(context: context.managedObjectContext) {
-                    context.dismiss()
+                if taskModel.addTask(context: env.managedObjectContext) {
+                    env.dismiss()
                 }
             } label: {
                 Text("Save Task")

@@ -16,6 +16,9 @@ struct HomeView: View {
     // MARK: Fetching Task
     @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Task.deadline, ascending: false)], predicate: nil, animation: .easeInOut) var tasks: FetchedResults<Task>
     
+    // MARK: Environment Values
+    @Environment(\.self) var env
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
@@ -32,7 +35,6 @@ struct HomeView: View {
                     .padding(.top, 5)
                 
                 // MARK: Task View
-                // Later Will Come
                 TaskView()
             }
             .padding()
@@ -102,7 +104,9 @@ struct HomeView: View {
                 // MARK: Edit Button Only for Non-Completed Tasks
                 if !task.isCompleted {
                     Button {
-                        
+                        taskModel.editTask = task
+                        taskModel.openEditTask = true
+                        taskModel.setupTask()
                     } label: {
                         Image(systemName: "square.and.pencil")
                             .foregroundColor(.black)
@@ -134,7 +138,9 @@ struct HomeView: View {
                 Spacer()
                 if !task.isCompleted {
                     Button {
-                        
+                        // MARK: Updating Core Data
+                        task.isCompleted.toggle()
+                        try? env.managedObjectContext.save()
                     } label: {
                         Circle()
                             .strokeBorder(.black, lineWidth: 1.5)
