@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220471C12879BB6000923EEB /* DynamicFilteredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220471C02879BB6000923EEB /* DynamicFilteredView.swift */; };
 		22F69CF928785D42008B6445 /* TaskManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F69CF828785D42008B6445 /* TaskManagerApp.swift */; };
 		22F69CFB28785D42008B6445 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F69CFA28785D42008B6445 /* ContentView.swift */; };
 		22F69CFD28785D45008B6445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F69CFC28785D45008B6445 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		220471C02879BB6000923EEB /* DynamicFilteredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFilteredView.swift; sourceTree = "<group>"; };
 		22F69CF528785D42008B6445 /* TaskManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F69CF828785D42008B6445 /* TaskManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerApp.swift; sourceTree = "<group>"; };
 		22F69CFA28785D42008B6445 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				22F69D0D28785E76008B6445 /* HomeView.swift */,
 				22F69D1128786C6B008B6445 /* AddNewTaskView.swift */,
+				220471C02879BB6000923EEB /* DynamicFilteredView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				22F69D0228785D45008B6445 /* Persistence.swift in Sources */,
 				22F69D1028786613008B6445 /* TaskViewModel.swift in Sources */,
 				22F69CFB28785D42008B6445 /* ContentView.swift in Sources */,
+				220471C12879BB6000923EEB /* DynamicFilteredView.swift in Sources */,
 				22F69D0528785D45008B6445 /* TaskManager.xcdatamodeld in Sources */,
 				22F69D0E28785E76008B6445 /* HomeView.swift in Sources */,
 				22F69CF928785D42008B6445 /* TaskManagerApp.swift in Sources */,

@@ -78,8 +78,9 @@ struct HomeView: View {
     @ViewBuilder
     func TaskView() -> some View {
         LazyVStack(spacing: 10) {
-            ForEach(tasks) {
-                TaskRowView(task: $0)
+            // MARK: Custom Filtered Request View
+            DynamicFilteredView(currentTab: taskModel.currentTab) { (task: Task) in
+                TaskRowView(task: task)
             }
         }
         .padding(.top, 20)
