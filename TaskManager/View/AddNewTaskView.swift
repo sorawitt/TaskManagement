@@ -69,14 +69,14 @@ struct AddNewTaskView: View {
                     .foregroundColor(.gray)
                 
                 Text(taskModel.taskDeadline.formatted(date: .abbreviated, time: .omitted) + ", " + taskModel.taskDeadline.formatted(date: .omitted, time: .shortened))
-                .font(.callout)
-                .fontWeight(.semibold)
-                .padding(.top, 8)
+                    .font(.callout)
+                    .fontWeight(.semibold)
+                    .padding(.top, 8)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .overlay(alignment: .bottomTrailing) {
                 Button {
-                    
+                    taskModel.showDatePicker.toggle()
                 } label: {
                     Image(systemName: "calendar")
                         .foregroundColor(.black)
@@ -138,7 +138,9 @@ struct AddNewTaskView: View {
             
             // MARK: Save Button
             Button {
-                taskModel.addTask(context: context.managedObjectContext)
+                if taskModel.addTask(context: context.managedObjectContext) {
+                    context.dismiss()
+                }
             } label: {
                 Text("Save Task")
                     .font(.callout)
@@ -154,6 +156,29 @@ struct AddNewTaskView: View {
         }
         .frame(maxHeight: .infinity, alignment: .top)
         .padding()
+        .overlay {
+            ZStack {
+                if taskModel.showDatePicker {
+                    Rectangle()
+                        .fill(.ultraThinMaterial)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            taskModel.showDatePicker = false
+                        }
+                    
+                    // MARK: Disabling Past Dates
+                    DatePicker("",
+                               selection: $taskModel.taskDeadline,
+                               in: Date.now...Date.distantFuture)
+                    .datePickerStyle(.graphical)
+                    .labelsHidden()
+                    .padding()
+                    .background(.white, in: RoundedRectangle(cornerSize: .init(width: 12, height: 12), style: .continuous))
+                    .padding()
+                }
+            }
+            .animation(.easeInOut, value: taskModel.showDatePicker)
+        }
     }
 }
 
