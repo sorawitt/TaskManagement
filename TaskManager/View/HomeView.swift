@@ -103,7 +103,7 @@ struct HomeView: View {
                 Spacer()
                 
                 // MARK: Edit Button Only for Non-Completed Tasks
-                if !task.isCompleted {
+                if !task.isCompleted && taskModel.currentTab != "Failed" {
                     Button {
                         taskModel.editTask = task
                         taskModel.openEditTask = true
@@ -137,7 +137,7 @@ struct HomeView: View {
                     .font(.caption)
                 }//.frame(maxWidth: .infinity, alignment: .leading)
                 Spacer()
-                if !task.isCompleted {
+                if !task.isCompleted && taskModel.currentTab != "Failed" {
                     Button {
                         // MARK: Updating Core Data
                         task.isCompleted.toggle()
@@ -161,7 +161,7 @@ struct HomeView: View {
     
     @ViewBuilder
     func CustomSegmentdBar() -> some View {
-        let tabs = ["Today", "Upcoming", "Task Done"]
+        let tabs = ["Today", "Upcoming", "Task Done", "Failed"]
         HStack(spacing: 10) {
             ForEach(tabs, id: \.self) { tab in
                 Text(tab)
